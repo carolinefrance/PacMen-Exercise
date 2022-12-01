@@ -1,14 +1,10 @@
-<!DOCTYPE html>
 <!-- PacMen Factory Exercise: pacmen.js -->
 <!-- Source: MiT xPro solution code     -->
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Pacmen Exercise</title>
-  <style> <!-- These are CJ France's styles: color & padding -->
+  <!-- CJ France's styles: color & padding -->
+  <style>
     #game {
       padding: 20px;
       background-image: radial-gradient( /* gradient background */
@@ -34,13 +30,12 @@
   </style>
 </head>
 
-<body>
-    <div id="game">
-        <button onclick="makeOne()">Add PacMan</button><br><br>
-        <button onclick="update()">Start Game</button><br><br>
-    </div>
-
+<body style="body">
+  <div id="game">
+    <button onclick="makeOne()">Add PacMan</button>
+    <button onclick="update()">Move PacMan</button>
+</div>
+<br>
     <script src="./pacmen.js"></script>
 </body>
-
 </html>
