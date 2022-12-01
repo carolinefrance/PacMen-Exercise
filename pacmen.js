@@ -28,12 +28,13 @@ function makePac() {
   newimg.style.position = "absolute";
   newimg.src = "./images/PacMan1.png";
   newimg.width = 100;
-  // TODO: set position here - source: video, solution code
+  // TODO: set position here
   newimg.style.left = position.x;
   newimg.style.top = position.y;
+
   // TODO add new Child image to game
-  /* TODO: add parameter */
   game.appendChild(newimg);
+
   // return details in an object
   return {
     position,
@@ -56,7 +57,9 @@ function update() {
 }
 
 function checkCollisions(item) {
-  // TODO: detect collision with all walls and make pacman bounce - source: video, solution code
+  // TODO: detect collision with all walls and make pacman bounce
+
+  /* MiT Source Code was not working in GitHub
   if (
     item.position.x + item.velocity.x + item.newimg.width > window.innerWidth ||
     item.position.x + item.velocity.x < 0
@@ -68,6 +71,19 @@ function checkCollisions(item) {
   )
     item.velocity.y = -item.velocity.y;
 }
+*/
+/* The source for the following lines is from a fellow student, F. Dutton at
+https://github.com/codefred77/pacmenfactory/blob/main/pacmen.js */
+let x = item.position.x;
+let y = item.position.y;
+if (x <= 0 || x > (window.innerWidth - item.newimg.width)) {
+  item.velocity.x = -item.velocity.x;
+  }
+if (y <= 0 || y > (window.innerHeight - item.newimg.height)) {
+  item.velocity.y = -item.velocity.y;
+  }
+}
+// end codefred77 code block
 
 function makeOne() {
   pacMen.push(makePac()); // add a new PacMan
